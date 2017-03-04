@@ -55,6 +55,10 @@
         this.source = "ASHB";
         this.dest = "CIVC";
 
+        this.isTrue = function() {
+            return false;
+        };
+
         this.getDetails = function() {
             $http.get("http://localhost:8888/rest/trains?source="+this.source+"&dest="+this.dest).success(function(result) {
                 console.log("Success", result);

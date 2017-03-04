@@ -81,6 +81,10 @@
                  <button ng-click="trip.initMap(); detail.getDetails()">Get Directions
 
                  </button>
+                 <div ng-hide = "detail.isTrue()">
+
+                        {{resultTrip.schedule.date}}
+                 </div>
 
                 </div>
 
