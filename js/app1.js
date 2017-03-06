@@ -19,7 +19,7 @@
             this.destination = newValue;
         };
 
-        $http.get("http://localhost:8888/rest/stations").success(function(result) {
+        $http.get("http://bart.mahendramhatre.com/stations").success(function(result) {
                 console.log("Success", result);
                 $scope.resultGet = result;
             }).error(function() {
@@ -28,7 +28,7 @@
 
         this.getTrips = function() {
             
-            $http.get("http://localhost:8888/rest/stations").success(function(result) {
+            $http.get("http://bart.mahendramhatre.com/stations").success(function(result) {
                 console.log("Success", result);
                 $scope.resultGet = result;
             }).error(function() {
@@ -39,7 +39,7 @@
 
         this.getStation = function(station) {
 
-            $http.get("http://localhost:8888/rest/station?source="+station).success(function(result) {
+            $http.get("http://bart.mahendramhatre.com/station?source="+station).success(function(result) {
                 console.log("Success", result);
                 $scope.resultS = result;
             }).error(function() {
@@ -50,7 +50,7 @@
 
     });
 
-    app.controller('detailsCtrl', function($scope, $http) {
+    app.controller('detailsCtrl', function($scope, $http, $interval) {
 
         this.source = "ASHB";
         this.dest = "CIVC";
@@ -59,14 +59,18 @@
             return false;
         };
 
-        this.getDetails = function() {
-            $http.get("http://localhost:8888/rest/trains?source="+this.source+"&dest="+this.dest).success(function(result) {
-                console.log("Success", result);
-                $scope.resultTrip = result;
-            }).error(function() {
-                console.log("error");
-            });
-        };
+
+        $interval(this.getDetails = function(org , dest) {
+
+            if(!(org === undefined) && !(dest === undefined)) {
+                $http.get("http://bart.mahendramhatre.com/trains?source=" + org.abbr + "&dest=" + dest.abbr).success(function (result) {
+                    console.log("Success", result);
+                    $scope.resultTrip = result;
+                }).error(function () {
+                    console.log("error");
+                });
+            };
+        },30000);
 
     });
 
@@ -81,9 +85,10 @@
         }
     });
 
+
     app.controller('TabController', function(){
         this.tab = 1;
-
+        
         this.setTab = function(newValue){
             this.tab = newValue;
         };
@@ -149,8 +154,16 @@
         this.long2 = "";
         this.long3 = "";
 
-        this.initMap = function() {
+        this.initMap = function(org, dest) {
 
+            if(!(org === undefined)){
+                this.lat2 = org.gtfs_latitude;
+                this.long2 = org.gtfs_longitude;
+            }
+            if(!(dest === undefined)) {
+                this.lat3 = dest.gtfs_latitude;
+                this.long3 = dest.gtfs_longitude;
+            }
             var pointA = new google.maps.LatLng(this.lat2, this.long2);
             var pointB = new google.maps.LatLng(this.lat3, this.long3);
             var myOptions = {
@@ -193,7 +206,7 @@
                 destination: pointB,
                 avoidTolls: true,
                 avoidHighways: false,
-                travelMode: google.maps.TravelMode.DRIVING
+                travelMode: google.maps.TravelMode.TRANSIT
             };
 
             directionsService.route(request, function (response, status) {
