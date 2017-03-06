@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ff625b5-89f7-4475-8d4a-f6d318ce4db5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bart.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app1.js" afterPath="$PROJECT_DIR$/js/app1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/station_info.html" afterPath="$PROJECT_DIR$/station_info.html" />
     </list>
     <ignored path="Angular.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,8 +44,8 @@
       <file leaf-file-name="app1.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1521">
-              <caret line="24" column="33" selection-start-line="208" selection-start-column="51" selection-end-line="208" selection-end-column="58" />
+            <state relative-caret-position="99">
+              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding>
                 <element signature="e#0#47#0" expanded="false" />
               </folding>
@@ -252,12 +248,12 @@
       <workItem from="1488507059731" duration="373000" />
       <workItem from="1488508081141" duration="50578000" />
       <workItem from="1488701677359" duration="676000" />
-      <workItem from="1488750891631" duration="1314000" />
+      <workItem from="1488750891631" duration="1391000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58384000" />
+    <option name="totallyTimeSpent" value="58461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -559,8 +555,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1521">
-          <caret line="24" column="33" selection-start-line="208" selection-start-column="51" selection-end-line="208" selection-end-column="58" />
+        <state relative-caret-position="99">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding>
             <element signature="e#0#47#0" expanded="false" />
           </folding>
